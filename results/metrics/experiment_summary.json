@@ -1,0 +1,84 @@
+{
+  "project": "A Comparative Study of Feature Extraction and Fine-Tuning Strategies in Transfer Learning Using MobileNetV2 for Image Classification",
+  "dataset": {
+    "name": "TensorFlow Flowers",
+    "num_classes": 5,
+    "classes": [
+      "daisy",
+      "dandelion",
+      "roses",
+      "sunflowers",
+      "tulips"
+    ],
+    "splits": {
+      "train": 2567,
+      "val": 547,
+      "test": 556
+    }
+  },
+  "environment": {
+    "torch_version": "2.11.0+cu128",
+    "cuda_available": true,
+    "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "seed": 42
+  },
+  "experiments": {
+    "frozen": {
+      "experiment_name": "Experiment A (Feature Extraction / Frozen Backbone)",
+      "status": "completed",
+      "unfrozen_blocks": 0,
+      "trainable_parameters": 6405,
+      "total_parameters": 2230277,
+      "learning_rate": 0.001,
+      "batch_size": 16,
+      "epochs": 10,
+      "best_epoch": 9,
+      "best_val_accuracy": 0.9159049360146252,
+      "final_train_accuracy": 0.9540319439033892,
+      "final_train_loss": 0.15997225509968815,
+      "final_val_loss": 0.2513557020336444,
+      "training_seconds": 78.18476366996765,
+      "checkpoint_file": "models/frozen_best.pth",
+      "history_file": "results/metrics/frozen_history.csv",
+      "source_checkpoint": "torchvision.models.MobileNet_V2_Weights.DEFAULT"
+    },
+    "partial": {
+      "experiment_name": "Experiment B (Partial Fine-Tuning / 2 Blocks Unfrozen)",
+      "status": "completed",
+      "unfrozen_blocks": 2,
+      "trainable_parameters": 892485,
+      "total_parameters": 2230277,
+      "learning_rate": 0.0001,
+      "batch_size": 16,
+      "epochs": 10,
+      "best_epoch": 9,
+      "best_val_accuracy": 0.946983546617916,
+      "final_train_accuracy": 0.9929879236462797,
+      "final_train_loss": 0.022274707413831255,
+      "final_val_loss": 0.21627901940265162,
+      "training_seconds": 55.925312995910645,
+      "checkpoint_file": "models/partial_best.pth",
+      "history_file": "results/metrics/partial_history.csv",
+      "source_checkpoint": "models/frozen_best.pth"
+    },
+    "deeper": {
+      "experiment_name": "Experiment C (Deeper Fine-Tuning / 5 Blocks Unfrozen)",
+      "status": "completed",
+      "unfrozen_blocks": 5,
+      "trainable_parameters": 1687749,
+      "total_parameters": 2230277,
+      "learning_rate": 0.0001,
+      "batch_size": 16,
+      "epochs": 10,
+      "best_epoch": 9,
+      "best_val_accuracy": 0.9341864716636198,
+      "final_train_accuracy": 0.9887027658745617,
+      "final_train_loss": 0.03441428521546292,
+      "final_val_loss": 0.24208800606294964,
+      "training_seconds": 64.23389959335327,
+      "checkpoint_file": "models/deeper_best.pth",
+      "history_file": "results/metrics/deeper_history.csv",
+      "source_checkpoint": "models/frozen_best.pth"
+    }
+  }
+}

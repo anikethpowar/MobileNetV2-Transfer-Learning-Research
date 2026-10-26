@@ -1,0 +1,504 @@
+{
+  "evaluation_dataset": {
+    "name": "TensorFlow Flowers Test Partition",
+    "total_images": 556,
+    "classes": [
+      "daisy",
+      "dandelion",
+      "roses",
+      "sunflowers",
+      "tulips"
+    ],
+    "deterministic_transform": "ImageNet default validation transforms (256 bilinear resize, 224 center crop, normalization)"
+  },
+  "experiments": {
+    "frozen": {
+      "display_name": "Experiment A (Frozen Backbone)",
+      "short_name": "Exp A: Frozen",
+      "checkpoint": "models/frozen_best.pth",
+      "unfrozen_blocks": 0,
+      "trainable_parameters": 0,
+      "total_parameters": 2230277,
+      "val_accuracy": 0.9159049360146252,
+      "metrics": {
+        "test_accuracy": 0.9154676258992805,
+        "accuracy_ci_95": [
+          0.8893976344925495,
+          0.9358359967808522
+        ],
+        "macro_precision": 0.9146309025027859,
+        "macro_recall": 0.9124836952895137,
+        "macro_f1": 0.9130447003850728,
+        "weighted_f1": 0.915137148655004,
+        "test_loss": 0.2619689342250927,
+        "correct_count": 509,
+        "incorrect_count": 47,
+        "total_count": 556,
+        "per_class_report": [
+          {
+            "class": "daisy",
+            "precision": 0.9285714285714286,
+            "recall": 0.9479166666666666,
+            "f1_score": 0.9381443298969072,
+            "support": 96
+          },
+          {
+            "class": "dandelion",
+            "precision": 0.9632352941176471,
+            "recall": 0.9632352941176471,
+            "f1_score": 0.9632352941176471,
+            "support": 136
+          },
+          {
+            "class": "roses",
+            "precision": 0.9090909090909091,
+            "recall": 0.8247422680412371,
+            "f1_score": 0.8648648648648649,
+            "support": 97
+          },
+          {
+            "class": "sunflowers",
+            "precision": 0.908256880733945,
+            "recall": 0.9339622641509434,
+            "f1_score": 0.9209302325581395,
+            "support": 106
+          },
+          {
+            "class": "tulips",
+            "precision": 0.864,
+            "recall": 0.8925619834710744,
+            "f1_score": 0.8780487804878049,
+            "support": 121
+          }
+        ],
+        "confusion_matrix": [
+          [
+            91,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            131,
+            0,
+            4,
+            1
+          ],
+          [
+            2,
+            0,
+            80,
+            1,
+            14
+          ],
+          [
+            3,
+            3,
+            1,
+            99,
+            0
+          ],
+          [
+            2,
+            0,
+            7,
+            4,
+            108
+          ]
+        ],
+        "confusion_matrix_normalized": [
+          [
+            0.9479166666666666,
+            0.020833333333333332,
+            0.0,
+            0.010416666666666666,
+            0.020833333333333332
+          ],
+          [
+            0.0,
+            0.9632352941176471,
+            0.0,
+            0.029411764705882353,
+            0.007352941176470588
+          ],
+          [
+            0.020618556701030927,
+            0.0,
+            0.8247422680412371,
+            0.010309278350515464,
+            0.14432989690721648
+          ],
+          [
+            0.02830188679245283,
+            0.02830188679245283,
+            0.009433962264150943,
+            0.9339622641509434,
+            0.0
+          ],
+          [
+            0.01652892561983471,
+            0.0,
+            0.05785123966942149,
+            0.03305785123966942,
+            0.8925619834710744
+          ]
+        ]
+      },
+      "latency": {
+        "repetitions": 5,
+        "total_time_mean_s": 0.9105442488002154,
+        "total_time_std_s": 0.045143880869859924,
+        "latency_ms_per_image_mean": 1.637669512230603,
+        "latency_ms_per_image_std": 0.08119403034147463,
+        "throughput_fps": 610.6238117835757
+      }
+    },
+    "partial": {
+      "display_name": "Experiment B (Partial Fine-Tuning)",
+      "short_name": "Exp B: Partial (2 blk)",
+      "checkpoint": "models/partial_best.pth",
+      "unfrozen_blocks": 2,
+      "trainable_parameters": 892485,
+      "total_parameters": 2230277,
+      "val_accuracy": 0.946983546617916,
+      "metrics": {
+        "test_accuracy": 0.9388489208633094,
+        "accuracy_ci_95": [
+          0.9157626063024562,
+          0.9559127444798384
+        ],
+        "macro_precision": 0.9388260339900814,
+        "macro_recall": 0.9377766353599204,
+        "macro_f1": 0.9380937573040351,
+        "weighted_f1": 0.9386245667531333,
+        "test_loss": 0.2613125935300729,
+        "correct_count": 522,
+        "incorrect_count": 34,
+        "total_count": 556,
+        "per_class_report": [
+          {
+            "class": "daisy",
+            "precision": 0.9583333333333334,
+            "recall": 0.9583333333333334,
+            "f1_score": 0.9583333333333334,
+            "support": 96
+          },
+          {
+            "class": "dandelion",
+            "precision": 0.9366197183098591,
+            "recall": 0.9779411764705882,
+            "f1_score": 0.9568345323741008,
+            "support": 136
+          },
+          {
+            "class": "roses",
+            "precision": 0.9072164948453608,
+            "recall": 0.9072164948453608,
+            "f1_score": 0.9072164948453608,
+            "support": 97
+          },
+          {
+            "class": "sunflowers",
+            "precision": 0.9528301886792453,
+            "recall": 0.9528301886792453,
+            "f1_score": 0.9528301886792453,
+            "support": 106
+          },
+          {
+            "class": "tulips",
+            "precision": 0.9391304347826087,
+            "recall": 0.8925619834710744,
+            "f1_score": 0.9152542372881356,
+            "support": 121
+          }
+        ],
+        "confusion_matrix": [
+          [
+            92,
+            3,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            133,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            88,
+            2,
+            5
+          ],
+          [
+            0,
+            4,
+            1,
+            101,
+            0
+          ],
+          [
+            1,
+            2,
+            8,
+            2,
+            108
+          ]
+        ],
+        "confusion_matrix_normalized": [
+          [
+            0.9583333333333334,
+            0.03125,
+            0.0,
+            0.0,
+            0.010416666666666666
+          ],
+          [
+            0.007352941176470588,
+            0.9779411764705882,
+            0.0,
+            0.007352941176470588,
+            0.007352941176470588
+          ],
+          [
+            0.020618556701030927,
+            0.0,
+            0.9072164948453608,
+            0.020618556701030927,
+            0.05154639175257732
+          ],
+          [
+            0.0,
+            0.03773584905660377,
+            0.009433962264150943,
+            0.9528301886792453,
+            0.0
+          ],
+          [
+            0.008264462809917356,
+            0.01652892561983471,
+            0.06611570247933884,
+            0.01652892561983471,
+            0.8925619834710744
+          ]
+        ]
+      },
+      "latency": {
+        "repetitions": 5,
+        "total_time_mean_s": 0.9148796322002454,
+        "total_time_std_s": 0.021317651041465647,
+        "latency_ms_per_image_mean": 1.6454669643889304,
+        "latency_ms_per_image_std": 0.03834109899544178,
+        "throughput_fps": 607.7302198354164
+      }
+    },
+    "deeper": {
+      "display_name": "Experiment C (Deeper Fine-Tuning)",
+      "short_name": "Exp C: Deeper (5 blk)",
+      "checkpoint": "models/deeper_best.pth",
+      "unfrozen_blocks": 5,
+      "trainable_parameters": 1687749,
+      "total_parameters": 2230277,
+      "val_accuracy": 0.9341864716636198,
+      "metrics": {
+        "test_accuracy": 0.9424460431654677,
+        "accuracy_ci_95": [
+          0.9198805163964903,
+          0.9589397143102493
+        ],
+        "macro_precision": 0.9419340781628917,
+        "macro_recall": 0.9453375667464174,
+        "macro_f1": 0.9427166091778154,
+        "weighted_f1": 0.9424344209412551,
+        "test_loss": 0.2260220839272223,
+        "correct_count": 524,
+        "incorrect_count": 32,
+        "total_count": 556,
+        "per_class_report": [
+          {
+            "class": "daisy",
+            "precision": 0.9494949494949495,
+            "recall": 0.9791666666666666,
+            "f1_score": 0.9641025641025641,
+            "support": 96
+          },
+          {
+            "class": "dandelion",
+            "precision": 0.9841269841269841,
+            "recall": 0.9117647058823529,
+            "f1_score": 0.9465648854961832,
+            "support": 136
+          },
+          {
+            "class": "roses",
+            "precision": 0.9375,
+            "recall": 0.9278350515463918,
+            "f1_score": 0.9326424870466321,
+            "support": 97
+          },
+          {
+            "class": "sunflowers",
+            "precision": 0.8898305084745762,
+            "recall": 0.9905660377358491,
+            "f1_score": 0.9375,
+            "support": 106
+          },
+          {
+            "class": "tulips",
+            "precision": 0.9487179487179487,
+            "recall": 0.9173553719008265,
+            "f1_score": 0.9327731092436975,
+            "support": 121
+          }
+        ],
+        "confusion_matrix": [
+          [
+            94,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            124,
+            0,
+            10,
+            0
+          ],
+          [
+            1,
+            0,
+            90,
+            1,
+            5
+          ],
+          [
+            1,
+            0,
+            0,
+            105,
+            0
+          ],
+          [
+            1,
+            1,
+            6,
+            2,
+            111
+          ]
+        ],
+        "confusion_matrix_normalized": [
+          [
+            0.9791666666666666,
+            0.010416666666666666,
+            0.0,
+            0.0,
+            0.010416666666666666
+          ],
+          [
+            0.014705882352941176,
+            0.9117647058823529,
+            0.0,
+            0.07352941176470588,
+            0.0
+          ],
+          [
+            0.010309278350515464,
+            0.0,
+            0.9278350515463918,
+            0.010309278350515464,
+            0.05154639175257732
+          ],
+          [
+            0.009433962264150943,
+            0.0,
+            0.0,
+            0.9905660377358491,
+            0.0
+          ],
+          [
+            0.008264462809917356,
+            0.008264462809917356,
+            0.049586776859504134,
+            0.01652892561983471,
+            0.9173553719008265
+          ]
+        ]
+      },
+      "latency": {
+        "repetitions": 5,
+        "total_time_mean_s": 0.9479622006001591,
+        "total_time_std_s": 0.049773001573389083,
+        "latency_ms_per_image_mean": 1.7049679866909337,
+        "latency_ms_per_image_std": 0.08951978700249838,
+        "throughput_fps": 586.5212765319059
+      }
+    }
+  },
+  "statistical_comparison": {
+    "frozen_vs_partial": {
+      "model_1": "frozen",
+      "model_2": "partial",
+      "contingency_matrix": {
+        "both_correct_n11": 503,
+        "model1_only_n10": 6,
+        "model2_only_n01": 19,
+        "both_incorrect_n00": 28
+      },
+      "total_discordant": 25,
+      "mcnemar_chi2_stat": 5.76,
+      "p_value_asymptotic_cc": 0.01639507184919225,
+      "p_value_exact_binomial": 0.01463329792022705,
+      "recommended_method": "mcnemar_chi2_cc",
+      "recommended_p_value": 0.01639507184919225,
+      "statistically_significant_alpha_0_05": true,
+      "statistically_significant_alpha_0_01": false,
+      "interpretation": "Difference is statistically significant at alpha=0.05 (p=0.0164)"
+    },
+    "frozen_vs_deeper": {
+      "model_1": "frozen",
+      "model_2": "deeper",
+      "contingency_matrix": {
+        "both_correct_n11": 497,
+        "model1_only_n10": 12,
+        "model2_only_n01": 27,
+        "both_incorrect_n00": 20
+      },
+      "total_discordant": 39,
+      "mcnemar_chi2_stat": 5.0256410256410255,
+      "p_value_asymptotic_cc": 0.024974679293054206,
+      "p_value_exact_binomial": 0.023702702470473014,
+      "recommended_method": "mcnemar_chi2_cc",
+      "recommended_p_value": 0.024974679293054206,
+      "statistically_significant_alpha_0_05": true,
+      "statistically_significant_alpha_0_01": false,
+      "interpretation": "Difference is statistically significant at alpha=0.05 (p=0.0250)"
+    },
+    "partial_vs_deeper": {
+      "model_1": "partial",
+      "model_2": "deeper",
+      "contingency_matrix": {
+        "both_correct_n11": 509,
+        "model1_only_n10": 13,
+        "model2_only_n01": 15,
+        "both_incorrect_n00": 19
+      },
+      "total_discordant": 28,
+      "mcnemar_chi2_stat": 0.03571428571428571,
+      "p_value_asymptotic_cc": 0.8501067391385259,
+      "p_value_exact_binomial": 0.8505540192127228,
+      "recommended_method": "mcnemar_chi2_cc",
+      "recommended_p_value": 0.8501067391385259,
+      "statistically_significant_alpha_0_05": false,
+      "statistically_significant_alpha_0_01": false,
+      "interpretation": "Difference is not statistically significant at alpha=0.05 (p=0.8501)"
+    }
+  }
+}

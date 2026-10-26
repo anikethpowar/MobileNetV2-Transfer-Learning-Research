@@ -1,0 +1,59 @@
+{
+  "frozen_vs_partial": {
+    "model_1": "frozen",
+    "model_2": "partial",
+    "contingency_matrix": {
+      "both_correct_n11": 503,
+      "model1_only_n10": 6,
+      "model2_only_n01": 19,
+      "both_incorrect_n00": 28
+    },
+    "total_discordant": 25,
+    "mcnemar_chi2_stat": 5.76,
+    "p_value_asymptotic_cc": 0.01639507184919225,
+    "p_value_exact_binomial": 0.01463329792022705,
+    "recommended_method": "mcnemar_chi2_cc",
+    "recommended_p_value": 0.01639507184919225,
+    "statistically_significant_alpha_0_05": true,
+    "statistically_significant_alpha_0_01": false,
+    "interpretation": "Difference is statistically significant at alpha=0.05 (p=0.0164)"
+  },
+  "frozen_vs_deeper": {
+    "model_1": "frozen",
+    "model_2": "deeper",
+    "contingency_matrix": {
+      "both_correct_n11": 497,
+      "model1_only_n10": 12,
+      "model2_only_n01": 27,
+      "both_incorrect_n00": 20
+    },
+    "total_discordant": 39,
+    "mcnemar_chi2_stat": 5.0256410256410255,
+    "p_value_asymptotic_cc": 0.024974679293054206,
+    "p_value_exact_binomial": 0.023702702470473014,
+    "recommended_method": "mcnemar_chi2_cc",
+    "recommended_p_value": 0.024974679293054206,
+    "statistically_significant_alpha_0_05": true,
+    "statistically_significant_alpha_0_01": false,
+    "interpretation": "Difference is statistically significant at alpha=0.05 (p=0.0250)"
+  },
+  "partial_vs_deeper": {
+    "model_1": "partial",
+    "model_2": "deeper",
+    "contingency_matrix": {
+      "both_correct_n11": 509,
+      "model1_only_n10": 13,
+      "model2_only_n01": 15,
+      "both_incorrect_n00": 19
+    },
+    "total_discordant": 28,
+    "mcnemar_chi2_stat": 0.03571428571428571,
+    "p_value_asymptotic_cc": 0.8501067391385259,
+    "p_value_exact_binomial": 0.8505540192127228,
+    "recommended_method": "mcnemar_chi2_cc",
+    "recommended_p_value": 0.8501067391385259,
+    "statistically_significant_alpha_0_05": false,
+    "statistically_significant_alpha_0_01": false,
+    "interpretation": "Difference is not statistically significant at alpha=0.05 (p=0.8501)"
+  }
+}
